@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Axel - Modern Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top header-strip">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="nav-profile-frame me-3">
+                        <img src="images/image1.jpeg" alt="Kevin Axel">
+                    </div>
+                    <div class="available-badge d-none d-sm-block">
+                        <span class="fw-bold text-white d-block" style="line-height: 1;">Kevin Axel</span>
+                        <span class="d-flex align-items-center mt-1"
+                            style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">
+                            <i class="green-pulse me-2"></i> Available for work
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto d-flex align-items-center py-3 py-lg-0">
+                    <a href="#home" class="nav-link-icon" title="Home"><i class="bi bi-house-door"></i></a>
+                    <a href="#about-me" class="nav-link-icon" title="About"><i class="bi bi-person"></i></a>
+                    <a href="#work" class="nav-link-icon" title="Projects"><i class="bi bi-briefcase"></i></a>
+                    <a href="#blog" class="nav-link-icon" title="Insights"><i class="bi bi-folder2"></i></a>
+                    <a href="#contactus" class="nav-link-icon" title="Contact"><i class="bi bi-telephone"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+
+                    <h3 class="sub-headline d-flex align-items-center gap-2"
+                        style="font-weight: 300; color: rgba(173, 95, 237, 0.8);">
+                        <i class="fa-regular fa-hand fa-bounce" style="color: #A855F7;"></i>
+                        Hello, I am Kevin
+                    </h3>
+
+                    <h1 class="main-headline fw-bold text-white">
+                        <span class="text-dev">Full-Stack Software Developer</span> &
+                        <span class="text-inf">Information Security Analyst</span>
+                    </h1>
+
+                    <p class="lead sub-headline" style="max-width: 650px; line-height: 1.8;">
+                        With a background in both development and security, I create efficient,
+                        scalable, and <span class="typing-text"></span>
+                    </p>
+
+                    <div class="mt-5 d-flex flex-row justify-content-center justify-content-lg-start gap-2 gap-md-3">
+                        <a href="#contactus" class="btn btn-hire-me btn-responsive">Hire me</a>
+                        <a href="#work" class="btn btn-projects btn-responsive">View Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="about-me" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="main-headline text-white">About Me</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center mt-3">
+                <div class="col-lg-6 mb-4">
+                    <div class="profile-circle mx-auto">
+                        <img src="images/image1.jpeg" alt="Kevin Axel" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about-me" class="py-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="main-headline text-white mb-4" style="font-family: 'Cormorant Garamond', serif;">
+                        Professional Profile
+                    </h2>
+                    <p class="lead sub-headline text-white-50" style="line-height: 1.8; font-size: 1.1rem;">
+                        I am a passionate Full-Stack Software Developer and Information Security Analyst with a
+                        commitment to creating secure, efficient, and innovative digital solutions.
+                    </p>
+                    <p class="text-white-50">
+                        With a strong foundation in both development and security, I specialize in building
+                        robust applications that not only meet user needs but also adhere to the highest
+                        standards of security.
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="accordion accordion-flush glassy-accordion" id="aboutAccordion">
+
+                        <div class="accordion-item bg-transparent text-white border-bottom border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent text-white shadow-none py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Education & Certifications
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+                                <div class="accordion-body text-white-50">
+                                    I'm currently pursuing a Bachelor's degree in <strong>Information Security</strong>,
+                                    with a focus on
+                                    secure software development and hardware exploitation. I hold certifications in
+                                    Cybersecurity, software development, and SEO Optimization.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-transparent text-white border-bottom border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent text-white shadow-none py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Security Philosophy
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+                                <div class="accordion-body text-white-50">
+                                    I believe security starts at the foundation. By thinking like an attacker, I
+                                    identify vulnerabilities early and reinforce them through secure design and
+                                    continuous testing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-transparent text-white border-bottom border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent text-white shadow-none py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Hobbies
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#aboutAccordion">
+                                <div class="accordion-body text-white-50">
+                                    When I'm not coding, I enjoy cycling, playing Chess, and playing Hockey. I also have
+                                    a passion for gaming as a way to stay connected with friends.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mt-5 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2 gap-md-3">
+                <a href="assets/Kevin_Axel_Resume.pdf" download class="btn btn-resume btn-responsive px-4 py-2">
+                    <i class="bi bi-download me-2"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="work" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="main-headline text-white" style="font-family: 'Cormorant Garamond', serif;">Recent Work
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card card-glass p-4 border-purple-glow">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="badge stack-badge me-2">Flagship Project</span>
+                                    <span class="badge stack-badge">Full-Stack</span>
+                                </div>
+                                <h4 class="text-white display-6 mb-3">TravelMate</h4>
+                                <p class="text-white-50 lh-lg">
+                                    Your ultimate travel companion. TravelMate simplifies trip planning by
+                                    integrating real-time logistics, budget tracking, and community-driven
+                                    insights into one seamless, secure interface.
+                                </p>
+                                <div class="tech-stack-icons fs-4 mb-4">
+                                    <i class="bi bi-stack text-dev me-3" title="Node.js"></i>
+                                    <i class="bi bi-database text-dev me-3" title="PostgreSQL"></i>
+                                    <i class="bi bi-shield-lock text-inf me-3" title="Secure Auth"></i>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="https://travelmate-pro-46da5.web.app"
+                                        class="btn btn-hire-me px-5 rounded-pill">
+                                        View Case Study
+                                    </a>
+                                    <a href="https://github.com/elvinkevin/travel-mate" target="_blank"
+                                        class="btn btn-projects px-4 rounded-pill d-flex align-items-center">
+                                        <i class="bi bi-github me-2"></i> GitHub Repo
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="glass-mockup text-center">
+                                    <i class="bi bi-airplane-engines display-1 text-white-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card card-glass h-100 p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <i class="bi bi-house-door text-dev fs-2"></i>
+                            <span class="badge bg-warning text-dark rounded-pill" style="height: fit-content;">In
+                                Development</span>
+                        </div>
+                        <h4 class="text-white">RentEase</h4>
+                        <p class="text-white-50">Property management simplified. Focuses on automated rent collection
+                            and secure booking flows.</p>
+                        <div class="mt-auto pt-4">
+                            <a href="construction.html" class="btn btn-projects btn-sm rounded-pill px-4">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card card-glass h-100 p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <i class="bi bi-chat-left-dots text-inf fs-2"></i>
+                            <span class="badge stack-badge">Live</span>
+                        </div>
+                        <h4 class="text-white">TrailSMS</h4>
+                        <p class="text-white-50">Backend infrastructure utilizing Africa’s Talking API for robust SMS
+                            delivery and webhook callbacks.</p>
+                        <div class="mt-auto pt-4 d-flex justify-content-start">
+                            <a href="https://github.com/elvinkevin/trail-sms" target="_blank"
+                                class="btn btn-projects px-4 rounded-pill d-flex align-items-center"
+                                style="width: fit-content;">
+                                <i class="bi bi-github me-2"></i> GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-glass h-100 p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <i class="bi bi-database-fill text-inf fs-2"></i>
+                            <div class="tech-badges">
+                                <span class="badge stack-badge">PostgreSQL</span>
+                                <span class="badge stack-badge">Live</span>
+                            </div>
+                        </div>
+                        <h4 class="text-white">Jumia Database Schema</h4>
+                        <p class="text-white-50">
+                            A highly scalable relational database architecture designed to handle high-traffic
+                            e-commerce operations, ensuring <strong>ACID compliance</strong> and data integrity.
+                        </p>
+                        <div class="mt-auto pt-4 d-flex align-items-center gap-3">
+                            <a href="https://github.com/elvinkevin/SQL-STUDY" target="_blank"
+                                class="btn btn-projects px-4 rounded-pill d-flex align-items-center">
+                                <i class="bi bi-github me-2"></i> GitHub Repo
+                            </a>
+                            <a href="#" class="text-white-50" title="View Schema"><i class="bi bi-diagram-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="updates" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h3 class="sub-headline" style="color: #A855F7;">Stay Tuned</h3>
+                    <h2 class="main-headline text-white" style="font-family: 'Cormorant Garamond', serif;">Latest
+                        Updates</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="update-card d-flex gap-4 mb-4">
+                        <div class="update-date text-center">
+                            <span class="d-block fw-bold text-white">30</span>
+                            <span class="text-purple small">APR</span>
+                        </div>
+                        <div class="card card-glass p-4 w-100">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="text-white mb-0">TravelMate: Live Deployment of the Site</h5>
+                                <span class="badge stack-badge">Frontend</span>
+                            </div>
+                            <p class="text-white-50 mb-0">The TravelMate website has been successfully deployed and is
+                                now live for users to explore.</p>
+                        </div>
+                    </div>
+
+                    <div class="update-card d-flex gap-4 mb-4">
+                        <div class="update-date text-center">
+                            <span class="d-block fw-bold text-white">12</span>
+                            <span class="text-purple small">APR</span>
+                        </div>
+
+                        <div class="card card-glass p-4 w-100">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="text-white mb-0">RentEase: Security Audit Initiated</h5>
+                                <span class="badge stack-badge">DevSecOps</span>
+                            </div>
+                            <p class="text-white-50 mb-0">Starting a full manual penetration test on the RentEase
+                                backend to ensure all API endpoints are protected against OWASP Top 10 vulnerabilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="feedback" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h3 class="sub-headline" style="color: #A855F7;">Testimonials</h3>
+                    <h2 class="main-headline text-white" style="font-family: 'Cormorant Garamond', serif;">Collaborator
+                        Feedback</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="feedbackCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                        data-bs-interval="5000">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="card card-glass p-5 text-center border-purple-glow">
+                                    <i class="bi bi-quote text-purple display-4 mb-3"></i>
+                                    <p class="lead text-white lh-lg italic">
+                                        Kevin doesn't just build features—he builds fortifications. His work on the
+                                        e-commerce database schema reflects a strong grasp of data integrity and
+                                        security rarely seen at this stage.
+                                    </p>
+                                    <div class="mt-4">
+                                        <h5 class="text-white mb-0">Madam Sara Osida</h5>
+                                        <small class="text-purple">KCAU</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card card-glass p-5 text-center border-purple-glow">
+                                    <i class="bi bi-quote text-purple display-4 mb-3"></i>
+                                    <p class="lead text-white lh-lg italic">
+                                        "Watching the evolution of TravelMate from a simple class assighnment to a fully
+                                        functional application has been impressive. Kevin's dedication and attention to
+                                        detail are truly commendable."
+                                    </p>
+                                    <div class="mt-4">
+                                        <h5 class="text-white mb-0">Kevin</h5>
+                                        <small class="text-purple">Techcamp trainer</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card card-glass p-5 text-center border-purple-glow">
+                                    <i class="bi bi-quote text-purple display-4 mb-3"></i>
+                                    <p class="lead text-white lh-lg italic">
+                                        "The TrailSMS integration into our tours and adventres system has gone a long
+                                        way in helping us ensurig the safety of our travelers. His persistence and
+                                        problem-solving skills have been invaluable."
+                                    </p>
+                                    <div class="mt-4">
+                                        <h5 class="text-white mb-0">john kairo</h5>
+                                        <small class="text-purple">CEO-Global Adventures Tours</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon opacity-50" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon opacity-50" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contactus" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="main-headline text-white" style="font-family: 'Cormorant Garamond', serif;">Get In Touch
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="card card-glass p-4 h-100">
+                        <h4 class="text-white mb-4">Let's build something secure.</h4>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon me-3"><i class="bi bi-envelope-at"></i></div>
+                            <div>
+                                <span class="d-block text-white-50 small">Email Me</span>
+                                <a href="mailto:yourname@example.com"
+                                    class="text-white text-decoration-none fw-bold">11772kevinaxel@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon me-3"><i class="bi bi-telephone-outbound"></i></div>
+                            <div>
+                                <span class="d-block text-white-50 small">Call / WhatsApp</span>
+                                <a href="tel:+254700000000" class="text-white text-decoration-none fw-bold">+254
+                                    116302277
+                                </a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon me-3"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <span class="d-block text-white-50 small">Location</span>
+                                <span class="text-white fw-bold">Nairobi, Kenya / Remote</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon me-3"><i class="bi bi-clock"></i></div>
+                            <div>
+                                <span class="d-block text-white-50 small">Working Hours</span>
+                                <span class="text-white fw-bold">Mon - Fri, 09:00 - 18:00 (EAT)</span>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="text-white-50 mb-3">Connect with me</h6>
+                            <div class="d-flex gap-3 fs-4">
+                                <a href="https://www.linkedin.com/in/elvinkevin/" class="text-white social-hover"
+                                    target="_blank"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://github.com/elvinkevin" class="text-white social-hover"
+                                    target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="https://www.instagram.com/117kevinaxel/" class="text-white social-hover"
+                                    target="_blank"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card card-glass p-4">
+                        <form action="#" id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label text-white-50">Full Name</label>
+                                    <input type="text" class="form-control glassy-input" placeholder="Enter your name">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label text-white-50">Email Address</label>
+                                    <input type="email" class="form-control glassy-input"
+                                        placeholder="name@company.com">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white-50">Subject</label>
+                                <select class="form-select glassy-input">
+                                    <option selected disabled>Choose a reason...</option>
+                                    <option class="text-info">Hire for Project</option>
+                                    <option class="text-info">Security Consultation</option>
+                                    <option class="text-info">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-white-50">Message</label>
+                                <textarea class="form-control glassy-input" rows="5"
+                                    placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-hire-me w-100 py-3 rounded-pill fw-bold">
+                                Send Secure Message <i class="bi bi-shield-lock-fill ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-5 mt-5 border-top border-secondary" style="background: #050505;">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <h5 class="text-white mb-2" style="font-family: 'Cormorant Garamond', serif;">Kevin Axel</h5>
+                    <p class="text-white-50 small mb-0">
+                        &copy; 2026 | Build with care
+                        Focused on <strong>Secure</strong> Development.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-4">
+                        <a href="#about-me" class="footer-link">About</a>
+                        <a href="#work" class="footer-link">Projects</a>
+                        <a href="#contactus" class="footer-link">Contact</a>
+
+                        <a href="#" class="back-to-top ms-3">
+                            <i class="bi bi-arrow-up-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.typing-text', {
+            strings: ['secure applications.', 'robust digital ecosystems.', 'optimized web solutions.'],
+            typeSpeed: 40,
+            backSpeed: 20,
+            backDelay: 2000,
+            loop: true,
+            cursorChar: '|'
+        });
+    </script>
+</body>
+
+</html>
