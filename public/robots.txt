@@ -1,0 +1,7 @@
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Link to your sitemap (if you create one later)
+# Sitemap: https://your-portfolio-id.web.app/sitemap.xml
+
