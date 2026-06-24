@@ -202,63 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     typeLoop();
   }
  
-  // ── CONTACT FORM ──
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      let valid = true;
- 
-      const fname = document.getElementById('fname');
-      const femail = document.getElementById('femail');
-      const fmessage = document.getElementById('fmessage');
-      const fsubject = document.getElementById('fsubject');
- 
-      // Validate
-      [fname, femail, fmessage, fsubject].forEach(el => {
-        el.closest('.form-group').classList.remove('error');
-      });
- 
-      if (!fname.value.trim()) {
-        fname.closest('.form-group').classList.add('error'); valid = false;
-      }
-      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRe.test(femail.value)) {
-        femail.closest('.form-group').classList.add('error'); valid = false;
-      }
-      if (!fmessage.value.trim()) {
-        fmessage.closest('.form-group').classList.add('error'); valid = false;
-      }
- 
-      if (!valid) return;
- 
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.querySelector('.submit-text').style.display = 'none';
-      submitBtn.querySelector('.submit-loading').style.display = 'flex';
-      submitBtn.disabled = true;
- 
-      // Simulate send (replace with real endpoint)
-      await new Promise(r => setTimeout(r, 1500));
- 
-      submitBtn.querySelector('.submit-loading').style.display = 'none';
-      submitBtn.querySelector('.submit-text').style.display = 'flex';
-      submitBtn.disabled = false;
-      form.reset();
-      const success = document.getElementById('formSuccess');
-      success.style.display = 'block';
-      setTimeout(() => success.style.display = 'none', 5000);
-    });
- 
-    // Live validation
-    ['fname', 'femail', 'fmessage'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('input', () => {
-          if (el.value.trim()) el.closest('.form-group').classList.remove('error');
-        });
-      }
-    });
-  }
+
  
   // ── ACTIVE NAV LINK ──
   const sections = document.querySelectorAll('section[id]');
@@ -276,55 +220,82 @@ document.addEventListener('DOMContentLoaded', () => {
  
 });
  
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.bind = this;
-  
-  // Basic validation check to ensure standard html validation passes
-  if (!this.checkValidity()) {
-    return; 
-  }
-  
-  // Prevent standard form page reload redirection
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const form = this;
+  let valid = true;
+
+  const fname = document.getElementById('fname');
+  const femail = document.getElementById('femail');
+  const fmessage = document.getElementById('fmessage');
+  const fsubject = document.getElementById('fsubject');
+
+  // Reset errors
+  [fname, femail, fmessage, fsubject].forEach(el => {
+    el.closest('.form-group').classList.remove('error');
+  });
+
+  // Validate
+  if (!fname.value.trim()) {
+    fname.closest('.form-group').classList.add('error');
+    valid = false;
+  }
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(femail.value)) {
+    femail.closest('.form-group').classList.add('error');
+    valid = false;
+  }
+
+  if (!fmessage.value.trim()) {
+    fmessage.closest('.form-group').classList.add('error');
+    valid = false;
+  }
+
+  if (!fsubject.value) {
+    fsubject.closest('.form-group').classList.add('error');
+    valid = false;
+  }
+
+  if (!valid) return;
+
   const submitBtn = document.getElementById('submitBtn');
   const submitText = submitBtn.querySelector('.submit-text');
   const submitLoading = submitBtn.querySelector('.submit-loading');
   const formSuccess = document.getElementById('formSuccess');
 
-  // Show loading spinner status
+  // Loading state
   submitText.style.display = 'none';
-  submitLoading.style.display = 'inline-block';
+  submitLoading.style.display = 'flex';
   submitBtn.disabled = true;
 
-  // Package form inputs into FormData object
   const formData = new FormData(form);
 
-  // Send request via AJAX Fetch API to Web3Forms endpoint
-  fetch('https://web3forms.com', {
-    method: 'POST',
-    body: formData
-  })
-  .then(async (response) => {
-    let json = await response.json();
-    if (response.status == 200) {
-      // Success display routine
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      form.reset();
       formSuccess.style.display = 'block';
-      form.reset(); // Clear text inputs
+      setTimeout(() => formSuccess.style.display = 'none', 5000);
     } else {
-      console.log(response);
-      alert(json.message || "Something went wrong!");
+      alert(result.message || "Something went wrong");
     }
-  })
-  .catch(error => {
-    console.log(error);
-    alert("Form submission failed. Check internet connection.");
-  })
-  .then(() => {
-    // Reset buttons back to normal ready state
-    submitText.style.display = 'inline-block';
-    submitLoading.style.display = 'none';
-    submitBtn.disabled = false;
-  });
+
+  } catch (error) {
+    console.error(error);
+    alert("Network error. Try again.");
+  }
+
+  // Reset button
+  submitText.style.display = 'flex';
+  submitLoading.style.display = 'none';
+  submitBtn.disabled = false;
 });
