@@ -276,3 +276,55 @@ document.addEventListener('DOMContentLoaded', () => {
  
 });
  
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.bind = this;
+  
+  // Basic validation check to ensure standard html validation passes
+  if (!this.checkValidity()) {
+    return; 
+  }
+  
+  // Prevent standard form page reload redirection
+  e.preventDefault();
+
+  const form = this;
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = submitBtn.querySelector('.submit-text');
+  const submitLoading = submitBtn.querySelector('.submit-loading');
+  const formSuccess = document.getElementById('formSuccess');
+
+  // Show loading spinner status
+  submitText.style.display = 'none';
+  submitLoading.style.display = 'inline-block';
+  submitBtn.disabled = true;
+
+  // Package form inputs into FormData object
+  const formData = new FormData(form);
+
+  // Send request via AJAX Fetch API to Web3Forms endpoint
+  fetch('https://web3forms.com', {
+    method: 'POST',
+    body: formData
+  })
+  .then(async (response) => {
+    let json = await response.json();
+    if (response.status == 200) {
+      // Success display routine
+      formSuccess.style.display = 'block';
+      form.reset(); // Clear text inputs
+    } else {
+      console.log(response);
+      alert(json.message || "Something went wrong!");
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    alert("Form submission failed. Check internet connection.");
+  })
+  .then(() => {
+    // Reset buttons back to normal ready state
+    submitText.style.display = 'inline-block';
+    submitLoading.style.display = 'none';
+    submitBtn.disabled = false;
+  });
+});
