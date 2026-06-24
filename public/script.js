@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 });
  
-if (form.company.value) return; // spam bot detected
+
 
 const form = document.getElementById('contactForm');
 
