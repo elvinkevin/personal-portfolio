@@ -3,6 +3,14 @@
 /* ============================================
    KEVIN AXEL · PORTFOLIO · SCRIPT
 ============================================ */
+emailjs.init("390hej_VRxJoHkh8A");
+
+emailjs.send("service_pc7augg", "template_ygbcprx", {
+  name: fname.value,
+  email: femail.value,
+  subject: fsubject.value,
+  message: fmessage.value
+});
  
 document.addEventListener('DOMContentLoaded', () => {
  
@@ -220,6 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
  
 });
  
+if (form.company.value) return; // spam bot detected
+
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', async (e) => {
@@ -237,7 +247,7 @@ form.addEventListener('submit', async (e) => {
     el.closest('.form-group').classList.remove('error');
   });
 
-  // Validate
+  // Validation
   if (!fname.value.trim()) {
     fname.closest('.form-group').classList.add('error');
     valid = false;
@@ -271,27 +281,25 @@ form.addEventListener('submit', async (e) => {
   submitLoading.style.display = 'flex';
   submitBtn.disabled = true;
 
-  const formData = new FormData(form);
-
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    });
+    await emailjs.send(
+      "YOUR_SERVICE_ID",     // ← replace
+      "YOUR_TEMPLATE_ID",    // ← replace
+      {
+        name: fname.value,
+        email: femail.value,
+        subject: fsubject.value,
+        message: fmessage.value
+      }
+    );
 
-    const result = await response.json();
-
-    if (result.success) {
-      form.reset();
-      formSuccess.style.display = 'block';
-      setTimeout(() => formSuccess.style.display = 'none', 5000);
-    } else {
-      alert(result.message || "Something went wrong");
-    }
+    form.reset();
+    formSuccess.style.display = 'block';
+    setTimeout(() => formSuccess.style.display = 'none', 5000);
 
   } catch (error) {
     console.error(error);
-    alert("Network error. Try again.");
+    alert("Failed to send message. Try again.");
   }
 
   // Reset button

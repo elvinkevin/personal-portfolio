@@ -640,55 +640,58 @@
           </div>
         </div>
 
-        <div class="contact-form-wrap" data-reveal>
-          <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" novalidate>
 
-            <!-- 1. The access key sits securely right at the start of the form -->
-            <input type="hidden" name="access_key" value="c0623971-5ae7-494c-82e5-a529f2e0ca96">
+          <!-- 🔒 Honeypot (spam protection – optional but smart) -->
+          <input type="text" name="company" style="display:none">
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fname">Full Name</label>
-                <input type="text" id="fname" name="fname" placeholder="Your name" required>
-                <span class="form-error" id="fnameErr">Please enter your name</span>
-              </div>
-
-              <!-- 2. FIXED: Restored the missing email input field below -->
-              <div class="form-group">
-                <label for="femail">Email</label>
-                <input type="email" id="femail" name="femail" placeholder="you@company.com" required>
-                <span class="form-error" id="femailErr">Please enter a valid email</span>
-              </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required>
+              <span class="form-error">Please enter your name</span>
             </div>
 
             <div class="form-group">
-              <label for="fsubject">Subject</label>
-              <select id="fsubject" name="fsubject" required>
-                <option value="" disabled selected>Select reason...</option>
-                <option value="hire">Hire for Project</option>
-                <option value="security">Security Consultation</option>
-                <option value="collab">Collaboration</option>
-                <option value="general">General Inquiry</option>
-              </select>
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="you@company.com" required>
+              <span class="form-error">Please enter a valid email</span>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="fmessage">Message</label>
-              <textarea id="fmessage" name="fmessage" rows="5" placeholder="Tell me about your project..."
-                required></textarea>
-              <span class="form-error" id="fmessageErr">Please enter a message</span>
-            </div>
+          <div class="form-group">
+            <label for="fsubject">Subject</label>
+            <select id="fsubject" name="subject" required>
+              <option value="" disabled selected>Select reason...</option>
+              <option value="Hire for Project">Hire for Project</option>
+              <option value="Security Consultation">Security Consultation</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <span class="form-error">Please select a subject</span>
+          </div>
 
-            <button type="submit" class="btn-primary btn-submit" id="submitBtn">
-              <span class="submit-text">Send Message <i class="bi bi-send ms-2"></i></span>
-              <span class="submit-loading" style="display:none"><i class="bi bi-hourglass-split"></i> Sending...</span>
-            </button>
+          <div class="form-group">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
+            <span class="form-error">Please enter a message</span>
+          </div>
 
-            <div class="form-success" id="formSuccess">
-              <i class="bi bi-check-circle"></i> Message sent! I'll get back to you soon.
-            </div>
-          </form>
-        </div>
+          <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+            <span class="submit-text">
+              Send Message <i class="bi bi-send ms-2"></i>
+            </span>
+            <span class="submit-loading" style="display:none">
+              <i class="bi bi-hourglass-split"></i> Sending...
+            </span>
+          </button>
+
+          <div class="form-success" id="formSuccess" style="display:none">
+            <i class="bi bi-check-circle"></i> Message sent! I'll get back to you soon.
+          </div>
+
+        </form>
 
   </section>
 
@@ -717,8 +720,9 @@
   <a href="#home" class="back-top" id="backTop" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
   </a>
-
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
+
 </body>
 
 </html>
