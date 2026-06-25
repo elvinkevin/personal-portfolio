@@ -5,22 +5,17 @@
 ============================================ */
 emailjs.init("390hej_VRxJoHkh8A");
 
-emailjs.send("service_pc7augg", "template_ygbcprx", {
-  name: fname.value,
-  email: femail.value,
-  subject: fsubject.value,
-  message: fmessage.value
-});
- 
+
+
 document.addEventListener('DOMContentLoaded', () => {
- 
+
   // ── LOADER ──
   const loader = document.getElementById('loader');
   setTimeout(() => {
     loader.classList.add('hidden');
     setTimeout(() => loader.remove(), 600);
   }, 2200);
- 
+
   // ── CUSTOM CURSOR ──
   const cursor = document.getElementById('cursor');
   const trail = document.getElementById('cursorTrail');
@@ -52,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
- 
+
   // ── NAV SCROLL ──
   const nav = document.getElementById('nav');
   const backTop = document.getElementById('backTop');
@@ -61,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('scrolled', y > 40);
     backTop.classList.toggle('visible', y > 400);
   });
- 
+
   // ── HAMBURGER ──
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -77,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     });
   });
- 
+
   // ── SMOOTH SCROLL FOR ALL ANCHOR LINKS ──
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
@@ -88,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
- 
+
   // ── SCROLL REVEAL ──
   const reveals = document.querySelectorAll('[data-reveal]');
   const revealObs = new IntersectionObserver((entries) => {
@@ -100,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => revealObs.observe(el));
- 
+
   // ── SKILL BARS (animate when in view) ──
   const skillFills = document.querySelectorAll('.skill-fill');
   const skillObs = new IntersectionObserver((entries) => {
@@ -115,12 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.skill-category').forEach(cat => skillObs.observe(cat));
- 
+
   // ── TESTIMONIALS ──
   const cards = document.querySelectorAll('.testimonial-card');
   const dotsContainer = document.getElementById('tcDots');
   let current = 0;
- 
+
   // Build dots
   cards.forEach((_, i) => {
     const dot = document.createElement('div');
@@ -128,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   });
- 
+
   function goTo(idx) {
     cards[current].classList.remove('active');
     dotsContainer.children[current].classList.remove('active');
@@ -137,17 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
     dotsContainer.children[current].classList.add('active');
   }
   cards[0].classList.add('active');
- 
+
   document.getElementById('tcPrev').addEventListener('click', () => goTo(current - 1));
   document.getElementById('tcNext').addEventListener('click', () => goTo(current + 1));
- 
+
   // Auto-rotate
   setInterval(() => goTo(current + 1), 6000);
- 
+
   // ── TERMINAL ──
   const termInput = document.getElementById('terminalInput');
   const termBody = document.getElementById('terminalBody');
- 
+
   const commands = {
     help: () => `Available commands: <span style="color:var(--gold)">whoami · skills · projects · contact · clear · date</span>`,
     whoami: () => `Kevin Axel — Full-Stack Developer & Security Analyst · Nairobi, Kenya`,
@@ -161,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     uname: () => `Linux kevin-devsec 6.5.0 #1 SMP x86_64 GNU/Linux`,
     status: () => `<span style="color:#4DAE00">● Available for work</span> — Mon–Fri 09:00–18:00 EAT`,
   };
- 
+
   function addTermLine(prompt, cmd, output) {
     if (cmd === 'clear') {
       termBody.innerHTML = '';
@@ -177,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     termBody.appendChild(outLine);
     termBody.scrollTop = termBody.scrollHeight;
   }
- 
+
   if (termInput) {
     termInput.addEventListener('keydown', e => {
       if (e.key === 'Enter') {
@@ -190,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
- 
+
   // Typing animation in terminal
   const typingEl = document.querySelector('.typing-terminal');
   if (typingEl) {
@@ -209,9 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     typeLoop();
   }
- 
 
- 
+
+
   // ── ACTIVE NAV LINK ──
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -225,9 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => navObs.observe(s));
- 
+
 });
- 
+
 
 
 const form = document.getElementById('contactForm');
@@ -282,15 +277,12 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
 
   try {
-    await emailjs.send(
-      "YOUR_SERVICE_ID",     // ← replace
-      "YOUR_TEMPLATE_ID",    // ← replace
-      {
-        name: fname.value,
-        email: femail.value,
-        subject: fsubject.value,
-        message: fmessage.value
-      }
+    await emailjs.send("service_lta54r4", "template_ygbcprx", {
+      name: fname.value,
+      email: femail.value,
+      subject: fsubject.value,
+      message: fmessage.value
+    }
     );
 
     form.reset();
